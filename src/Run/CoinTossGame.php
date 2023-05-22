@@ -1,4 +1,5 @@
 <?php
+
 namespace Run;
 
 use Interface\RandomSourceInterface;

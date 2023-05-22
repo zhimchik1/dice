@@ -1,4 +1,5 @@
 <?php
+
 namespace Game;
 
 use Interface\RandomSourceInterface;

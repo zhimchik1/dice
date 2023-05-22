@@ -11,7 +11,6 @@ spl_autoload_register(function ($className) {
 
 use Run\CoinTossGame;
 
-// Функція для створення гри з вибраним джерелом випадкових подій
 function createGame(string $gameType): CoinTossGame
 {
     $gameTypeClass = 'Game\\' . ucfirst($gameType);
@@ -22,10 +21,8 @@ function createGame(string $gameType): CoinTossGame
     }
 }
 
-// Отримуємо вибраний тип гри з параметру запиту або встановлюємо значення "coin" за замовчуванням
 $gameType = $_GET['game'] ?? 'coin';
 
-// Обробка форми
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Отримуємо вибраний тип гри з переданого значення кнопки
     $gameType = $_POST['game'] ?? 'coin';
@@ -34,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $gamesDirectory = __DIR__ . '/src/Game';
 $availableGames = [];
 
-// Завантаження доступних ігор з папки Game
 $gameFiles = glob($gamesDirectory . '/*.php');
 foreach ($gameFiles as $gameFile) {
     $gameName = basename($gameFile, '.php');
