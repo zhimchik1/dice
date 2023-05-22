@@ -4,7 +4,7 @@ namespace Game;
 
 use Interface\RandomSourceInterface;
 
-class Card implements RandomSourceInterface
+class CardDraw implements RandomSourceInterface
 {
     public function getRandomElement(): string
     {

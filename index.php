@@ -16,15 +16,14 @@ function createGame(string $gameType): CoinTossGame
     $gameTypeClass = 'Game\\' . ucfirst($gameType);
     if (class_exists($gameTypeClass)) {
         return new CoinTossGame(new $gameTypeClass());
-    } else {
-        throw new InvalidArgumentException('Invalid game type');
     }
+
+    throw new InvalidArgumentException('Invalid game type');
 }
 
 $gameType = $_GET['game'] ?? 'coin';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Отримуємо вибраний тип гри з переданого значення кнопки
     $gameType = $_POST['game'] ?? 'coin';
 }
 
@@ -44,7 +43,6 @@ try {
     $result = 'Invalid game type';
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>

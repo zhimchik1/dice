@@ -4,7 +4,7 @@ namespace Game;
 
 use Interface\RandomSourceInterface;
 
-class Coin implements RandomSourceInterface
+class CoinToss implements RandomSourceInterface
 {
     public function getRandomElement(): string
     {

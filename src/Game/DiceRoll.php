@@ -4,7 +4,7 @@ namespace Game;
 
 use Interface\RandomSourceInterface;
 
-class Dice implements RandomSourceInterface
+class DiceRoll implements RandomSourceInterface
 {
     public function getRandomElement(): string
     {
