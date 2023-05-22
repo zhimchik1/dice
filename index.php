@@ -21,10 +21,10 @@ function createGame(string $gameType): CoinTossGame
     throw new InvalidArgumentException('Invalid game type');
 }
 
-$gameType = $_GET['game'] ?? 'coin';
+$gameType = $_GET['game'] ?? 'CoinToss';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $gameType = $_POST['game'] ?? 'coin';
+    $gameType = $_POST['game'] ?? 'CoinToss';
 }
 
 $gamesDirectory = __DIR__ . '/src/Game';
